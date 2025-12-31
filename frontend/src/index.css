@@ -1,1 +1,103 @@
+:root {
+  --bg-color: #0a0a0b;
+  --panel-bg: #141417;
+  --accent-blue: #0070f3;
+  --critical: #ff4d4d;
+  --warning: #ffaa00;
+  --low: #00ff88;
+  --text-main: #e1e1e6;
+  --text-dim: #a1a1aa;
+}
 
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+  padding-bottom: 15px;
+}
+
+.facility-map {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  flex: 2;
+  padding: 20px;
+}
+
+.zone-box {
+  background: var(--panel-bg);
+  border: 1px solid #333;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  min-height: 200px;
+  position: relative;
+}
+
+.active-alarm {
+  border-color: var(--critical);
+  box-shadow: 0 0 15px rgba(255, 77, 77, 0.3);
+}
+
+.pulse {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--critical);
+  border-radius: 8px;
+  animation: ripple 1.5s infinite;
+}
+
+@keyframes ripple {
+  0% { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(1.05); opacity: 0; }
+}
+
+.narrative-feed {
+  flex: 1;
+  background: #111;
+  padding: 15px;
+  border-left: 2px solid var(--accent-blue);
+  overflow-y: auto;
+}
+
+.event-card {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 4px;
+  background: #1a1a1d;
+}
+
+.event-card.critical { border-left: 4px solid var(--critical); }
+.event-card.medium { border-left: 4px solid var(--warning); }
+.event-card.low { border-left: 4px solid var(--low); }
+
+button {
+  background: var(--accent-blue);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+button:hover { filter: brightness(1.2); }
