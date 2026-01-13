@@ -1,1 +1,29 @@
-
+[
+  {
+    "id": 1,
+    "timestamp": "10:00:01",
+    "layer": "Layer 1: Physical",
+    "tech_log": "Signal anomaly detected on Eth0.",
+    "narrative_log": "Intruder detected cutting the perimeter fence.",
+    "zone": "Perimeter",
+    "severity": "low"
+  },
+  {
+    "id": 2,
+    "timestamp": "10:02:15",
+    "layer": "Layer 3: Network",
+    "tech_log": "ICMP Flood from unknown internal IP.",
+    "narrative_log": "Intruder is testing doors in the hallway.",
+    "zone": "Hallway",
+    "severity": "medium"
+  },
+  {
+    "id": 3,
+    "timestamp": "10:05:00",
+    "layer": "Layer 7: Application",
+    "tech_log": "SQL Injection attempt on /api/vault.",
+    "narrative_log": "Intruder is trying to pick the lock on the High-Security Vault.",
+    "zone": "Vault",
+    "severity": "critical"
+  }
+]
